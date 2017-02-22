@@ -5,11 +5,24 @@
 
 <body>
 <div id="wrapper">
-<h1>Testdf</h1>
+<h1>convert JavaScript object into JSON</h1>
+<div id="js-obj-json"></div>
+<h1>convert JSON into JavaScript object</h1>
+<div id="json-js-obj"></div>
 </div>
 </body>
 
 <script>
+
+//convert JavaScript object into JSON
+var myObj = { "name":"Amar", "age":29, "city":"Bangalore" };
+var myJSON = JSON.stringify(myObj);
+document.getElementById("js-obj-json").innerHTML = myJSON;
+
+//convert JSON into JavaScript object
+var myJSON = '{ "name":"Amar", "age":29, "city":"Bangalore" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("json-js-obj").innerHTML = myObj.name;
 
 </script>
 
