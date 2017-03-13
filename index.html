@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <head>
-<title></title>
+<title>JSON Session</title>
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
-<div id="wrapper">
-<h1>convert JavaScript object into JSON</h1>
-<div id="js-obj-json"></div>
-<h1>convert JSON into JavaScript object</h1>
-<div id="json-js-obj"></div>
-</div>
+	<div id="wrapper">
+	 	<h1>JSON Session</h1>
+		<div class="container">
+			<h2 id="head"></h2>
+			<div id="demo"></div>
+		</div>
+ 
+	</div>
 </body>
 
 <script>
 
-//convert JavaScript object into JSON
-var myObj = { "name":"Amar", "age":29, "city":"Bangalore" };
-var myJSON = JSON.stringify(myObj);
-document.getElementById("js-obj-json").innerHTML = myJSON;
+//Sending Data
 
-//convert JSON into JavaScript object
-var myJSON = '{ "name":"Amar", "age":29, "city":"Bangalore" }';
-var myObj = JSON.parse(myJSON);
-document.getElementById("json-js-obj").innerHTML = myObj.name;
+var myObj = { "name":"testName", "age":28, "city":"testCity" };
+var myJSON = JSON.stringify(myObj);
+document.getElementById("head").innerHTML = "Sending Data";
+document.getElementById("demo").innerHTML = myJSON;
+console.log("myObj: "+typeof(myObj));
+console.log("myJSON: "+typeof(myJSON));
+
+
+//Receiving Data
+
+// var myJSON = '{ "name":"testName", "age":28, "city":"testCity" }';
+// var myObj = JSON.parse(myJSON);
+// document.getElementById("head").innerHTML = "Receiving Data";
+// document.getElementById("demo").innerHTML = myObj.name+"<br>"+myObj.age+"<br>"+myObj.city;
+// console.log("myJSON: "+typeof(myJSON));
+// console.log("myObj: "+typeof(myObj));
 
 </script>
 
