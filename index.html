@@ -172,9 +172,9 @@
 
 //Parsing JSON
  
-// var obj = JSON.parse('{ "name":"testName", "age":28, "city":"testCity"}');
+// var myObj = JSON.parse('{ "name":"testName", "age":28, "city":"testCity"}');
 // document.getElementById("head").innerHTML = "Parsing JSON";
-// document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+// document.getElementById("demo").innerHTML = myObj.name + ", " + myObj.age;
 
 
 //JSON From the Server
@@ -197,16 +197,67 @@
 
 //Array as JSON
 
-var xmlhttp = new XMLHttpRequest();
-document.getElementById("head").innerHTML = "Array as JSON";
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myArr = JSON.parse(this.responseText);
-        document.getElementById("demo").innerHTML = myArr[0]+"<br>"+myArr[1];
-    }
-};
-xmlhttp.open("GET", "json/json_demo_array.txt", true);
-xmlhttp.send();
+// var xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "Array as JSON";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myArr = JSON.parse(this.responseText);
+//         document.getElementById("demo").innerHTML = myArr[0]+"<br>"+myArr[1];
+//     }
+// };
+// xmlhttp.open("GET", "json/json_demo_array.txt", true);
+// xmlhttp.send();
+
+
+//Stringify a JavaScript Object
+
+// var myObj = { "name":"testName", "age":30, "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify a JavaScript Object";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify a JavaScript Array
+
+// var myArr = [ "Car", "Bike"];
+// var myJSON = JSON.stringify(myArr);
+// document.getElementById("head").innerHTML = "Stringify a JavaScript Array";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myArr: "+typeof(myArr));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify Dates
+
+// var myObj = { "name":"testName", "today":new Date(), "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Dates";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify Functions
+
+// var myObj = { "name":"testName", "age":function () {return 30;}, "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Functions";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+// var myObj = { "name":"testName", "age":function () {return 30;}, "city":"testCity"};
+// myObj.age = myObj.age.toString();
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Functions";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+
 
 </script>
 
