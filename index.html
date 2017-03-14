@@ -36,6 +36,7 @@
 // console.log("myJSON: "+typeof(myJSON));
 // console.log("myObj: "+typeof(myObj));
 
+
 //Storing data
 
 // myObj = { "name":"testName", "age":28, "city":"testCity" };
@@ -43,6 +44,7 @@
 // localStorage.setItem("testJSON", myJSON);
 // console.log("myObj: "+typeof(myObj));
 // console.log("myJSON: "+typeof(myJSON));
+
 
 //Retrieving data
 
@@ -52,6 +54,7 @@
 // document.getElementById("demo").innerHTML = obj.name+"<br>"+obj.age+"<br>"+obj.city; 
 // console.log("text: "+typeof(text));
 // console.log("obj: "+typeof(obj));
+
 
 //Accessing Object Values
 
@@ -67,9 +70,49 @@
 // }
 
 
+//Nested JSON Objects
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "vehicle": {
+//         "vehicle1":"Car",
+//         "vehicle2":"Bike"
+//    }
+//  }
+// document.getElementById("head").innerHTML = "Nested JSON Objects";
+// x = myObj.vehicle.vehicle2;
+// //(OR)
+// //x = myObj.vehicle["vehicle2"];
+// document.getElementById("demo").innerHTML = x;
 
 
+//Accessing Array Values
 
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+//  x = myObj.vehicle[0];
+// document.getElementById("head").innerHTML = "Accessing Array Values";
+// document.getElementById("demo").innerHTML = x;
+
+
+//Looping Through an Array
+
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i in myObj.vehicle) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
+//(OR)
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i = 0; i < myObj.vehicle.length; i++) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
 
 
 </script>
