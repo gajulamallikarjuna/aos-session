@@ -36,6 +36,7 @@
 // console.log("myJSON: "+typeof(myJSON));
 // console.log("myObj: "+typeof(myObj));
 
+
 //Storing data
 
 // myObj = { "name":"testName", "age":28, "city":"testCity" };
@@ -43,6 +44,7 @@
 // localStorage.setItem("testJSON", myJSON);
 // console.log("myObj: "+typeof(myObj));
 // console.log("myJSON: "+typeof(myJSON));
+
 
 //Retrieving data
 
@@ -52,6 +54,7 @@
 // document.getElementById("demo").innerHTML = obj.name+"<br>"+obj.age+"<br>"+obj.city; 
 // console.log("text: "+typeof(text));
 // console.log("obj: "+typeof(obj));
+
 
 //Accessing Object Values
 
@@ -67,9 +70,104 @@
 // }
 
 
+//Nested JSON Objects
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "vehicle": {
+//         "vehicle1":"Car",
+//         "vehicle2":"Bike"
+//    }
+//  }
+// document.getElementById("head").innerHTML = "Nested JSON Objects";
+// x = myObj.vehicle.vehicle2;
+// //(OR)
+// //x = myObj.vehicle["vehicle2"];
+// document.getElementById("demo").innerHTML = x;
 
 
+//Accessing Array Values
 
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+//  x = myObj.vehicle[0];
+// document.getElementById("head").innerHTML = "Accessing Array Values";
+// document.getElementById("demo").innerHTML = x;
+
+
+//Looping Through an Array
+
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i in myObj.vehicle) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
+//(OR)
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i = 0; i < myObj.vehicle.length; i++) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
+
+
+//Nested Arrays in JSON Objects
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+//  document.getElementById("head").innerHTML = "Nested Arrays in JSON Objects";
+// for (i in myObj.cars) {
+//     document.getElementById("demo").innerHTML += "<h1>" + myObj.cars[i].name + "</h1>";
+//     for (j in myObj.cars[i].models) {
+//         document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].models[j]+"</li>";
+//     }
+// }
+
+
+//Modify Array Values
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+// myObj.cars[1]["name"] = "Mercedes";
+// myObj.cars[1]["models"] = ["Benz SLS AMG","Benz CLA-Class"];
+// console.log(myObj);
+// document.getElementById("head").innerHTML = "Nested Arrays in JSON Objects";
+// document.getElementById("demo").innerHTML = JSON.stringify(myObj);
+
+
+//Delete Array Items
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+// delete myObj.cars[1];
+// console.log(myObj);
+// document.getElementById("head").innerHTML = "Delete Array Items";
+// document.getElementById("demo").innerHTML = JSON.stringify(myObj);
 
 
 </script>
