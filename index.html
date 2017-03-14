@@ -170,6 +170,44 @@
 // document.getElementById("demo").innerHTML = JSON.stringify(myObj);
 
 
+//Parsing JSON
+ 
+// var obj = JSON.parse('{ "name":"testName", "age":28, "city":"testCity"}');
+// document.getElementById("head").innerHTML = "Parsing JSON";
+// document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+
+
+//JSON From the Server
+ 
+// var xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "JSON From the Server";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myObj = JSON.parse(this.responseText);
+//         document.getElementById("demo").innerHTML = myObj.name+"<br>"+myObj.age+"<br>";
+//         for (i in myObj.cars) {
+//     		document.getElementById("demo").innerHTML += myObj.cars[i].name;   	
+//         	document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].model+"</li>";
+// 		}
+//     }
+// };
+// xmlhttp.open("GET", "json/json_demo.txt", true);
+// xmlhttp.send();
+
+
+//Array as JSON
+
+var xmlhttp = new XMLHttpRequest();
+document.getElementById("head").innerHTML = "Array as JSON";
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myArr = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myArr[0]+"<br>"+myArr[1];
+    }
+};
+xmlhttp.open("GET", "json/json_demo_array.txt", true);
+xmlhttp.send();
+
 </script>
 
 </html>
