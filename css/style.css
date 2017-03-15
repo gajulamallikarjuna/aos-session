@@ -22,3 +22,31 @@ li {
     margin: 0;
     padding: 5px 15px;
 }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+}
+
+table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+table td {
+    width: 200px;
+    padding: 8px 8px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: top;
+}
+
+table td::first-letter {
+    font-size: 200%;
+    color: #8A2BE2;
+}

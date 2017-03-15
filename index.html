@@ -257,6 +257,27 @@
 // console.log("myJSON: "+typeof(myJSON));
 
 
+// JSON HTML
+
+var txt, x;
+xmlhttp = new XMLHttpRequest();
+document.getElementById("head").innerHTML = "JSON HTML ";
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        txt = "<table>";
+        txt += "<tr><th>Color Name</th><th>Hex Color Code</th>th>RGB Color Code</th></tr>";
+        for (x in myObj) {
+            myObj[x].forEach(function(elem, index) {
+            	txt += "<tr><td style='color:"+elem.hexValue+"'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
+    		});
+        }
+        txt += "</table>"        
+        document.getElementById("demo").innerHTML = txt;
+    }
+};
+xmlhttp.open("GET", "json/json-html.txt", true);
+xmlhttp.send();
 
 
 </script>
