@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+<title>JSON Session</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+	<div id="wrapper">
+	 	<h1>JSON Session</h1>
+		<div class="container">
+            <a href="#" id="get-demo-data">Get JSON data</a>
+			<h2 id="head"></h2>
+			<div id="demo"></div>
+		</div>
+	</div>
+</body>
+
+<script>
+
+// JSON with Ajax jQuery
+
+// $(document).ready(function () {
+//   $('#get-demo-data').click(function () {
+//     var demoData = $('#demo'), userData;
+//     document.getElementById("head").innerHTML = "JSON with Ajax jQuery";
+//     $.getJSON('json/json_ajax_jquery.json', function (data) {
+//       userData = "<table id='user-table'>";
+//       userData += "<tr><th>User ID</th><th>Name</th><th>User Name</th><th>Email</th><th>Address</th><th>Phone</th><th>Website</th><th>Company</th></tr>";
+//       var users = data.users.map(function (user) {
+//       userData += "<tr><td>" + user.id + "</td><td>" + user.name + "</td><td>" + user.username + "</td><td>" + user.email + "</td><td><b>Street:</b> " + user.address['street'] + "<br /><b>Suite:</b> " + user.address['suite'] + "<br /><b>City:</b> " + user.address['city'] + "<br /><b>Zip Code:</b> " + user.address['zipcode'] + "</td><td>" + user.phone + "</td><td><a href="+user.website+" target='_blank'>" + user.website + "</a></td><td><b>Name:</b> " + user.company['name'] + "<br /><b>Catch Phrase:</b> " + user.company['catchPhrase'] + "<br /><b>BS:</b> " + user.company['bs'] + "</td></tr>";
+//       });
+//       userData += "</table>"        
+//       document.getElementById("demo").innerHTML = userData;
+//     });
+//     demoData.text('Loading the JSON file.');
+//   });
+// });
+
+
+//JSONP
+
+//A failing example
+
+// document.getElementById("get-demo-data").style = "display: none";
+// $(document).ready(function () {
+//     $.getJSON(
+//     "http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-1.json",
+//     function(json) { console.log(json); }
+//     );
+// });
+
+
+//A Possible Workaround
+
+// document.getElementById("get-demo-data").style = "display: none";
+// function jsonCallback(json){
+//   console.log(json);
+// }
+
+// $.ajax({
+//   url: "http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-2.json",
+//   dataType: "jsonp"
+// });
+
+
+//JSONP specify a name for the callback function 
+
+// document.getElementById("get-demo-data").style = "display: none";
+// function logResults(json){
+//   console.log(json);
+// }
+
+// $.ajax({
+//   url: "https://api.github.com/users/jeresig",
+//   dataType: "jsonp",
+//   jsonpCallback: "logResults"
+// });
+
+//(OR)
+
+// $.getJSON("https://api.github.com/users/jeresig?callback=?",function(json){
+//   console.log(json);
+// });
+
+
+//JSON Restructure
+
+var response = [{
+        "RegionName": "AMR",
+        "SalesOrgCode": "1001",
+        "SalesOrgDesc": "US",
+        "Date": "2016-06-1"
+    }, {
+        "RegionName": "AMR",
+        "SalesOrgCode": "1002",
+        "SalesOrgDesc": "Canada",
+        "Date": "2016-06-2"
+    }, {
+        "RegionName": "Europe",
+        "SalesOrgCode": "2001    ",
+        "SalesOrgDesc": "Netherlands",
+        "Date": "2016-06-01"
+    }, {
+        "RegionName": "Europe",
+        "SalesOrgCode": "2002    ",
+        "SalesOrgDesc": "UK",
+        "Date": "2016-06-02"
+    }, {
+        "RegionName": "APAC",
+        "SalesOrgCode": "4001",
+        "SalesOrgDesc": "New Zealand",
+        "Date": "2016-06-01"
+    }, {
+        "RegionName": "APAC",
+        "SalesOrgCode": "4002",
+        "SalesOrgDesc": "Singapore",
+        "Date": "2016-06-02"
+    }];
+
+document.getElementById("get-demo-data").style = "display: none";
+document.getElementById("head").innerHTML = "JSON Restructure";
+document.getElementById("demo").innerHTML = JSON.stringify(response);
+console.log(response);
+
+var groups = {};
+for(var g = 0; g < response.length; g++) {
+    var item = response[g];
+  if(item.RegionName != null) {
+        if(!groups[item.RegionName]) {
+            groups[item.RegionName] = [];
+        }
+        groups[item.RegionName].push({
+            day: item.Date,
+            orgcode: item.SalesOrgCode,
+            orgdesc: item.SalesOrgDesc,
+            sap: item.SAPCount,
+            rover: item.ROVERCount
+        });
+  }
+}
+
+var datas = [];
+for(var gs in groups) {
+    if(Object.prototype.hasOwnProperty.call(groups, gs)) {
+        var objGroup = {};
+        objGroup[gs] = groups[gs];
+        datas.push(objGroup);
+    }
+}
+
+document.getElementById("demo").innerHTML += "<br /><br />"+JSON.stringify(datas);
+console.log(datas);
+
+
+</script>
+
+</html>

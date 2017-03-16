@@ -31,12 +31,12 @@
            
         },
         {
-            "colorName":"black"            
+            "colorName":"black",          
             "hexValue":"#000",
             "rgbValue":"rgb(0, 0, 0)"
         },
         {
-            "colorName":"orange"            
+            "colorName":"orange",           
             "hexValue":"#fa0",
             "rgbValue":"rgb(255,165,0)"
         }

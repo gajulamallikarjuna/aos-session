@@ -257,7 +257,7 @@
 // console.log("myJSON: "+typeof(myJSON));
 
 
-// JSON HTML
+//JSON HTML
 
 var txt, x;
 xmlhttp = new XMLHttpRequest();
@@ -266,10 +266,10 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         myObj = JSON.parse(this.responseText);
         txt = "<table>";
-        txt += "<tr><th>Color Name</th><th>Hex Color Code</th>th>RGB Color Code</th></tr>";
+        txt += "<tr><th>Color Name</th><th>Hex Color Code</th><th>RGB Color Code</th></tr>";
         for (x in myObj) {
             myObj[x].forEach(function(elem, index) {
-            	txt += "<tr><td style='color:"+elem.hexValue+"'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
+            	txt += "<tr><td style='color:"+elem.hexValue+"' class='colorName'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
     		});
         }
         txt += "</table>"        
