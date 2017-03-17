@@ -12,7 +12,6 @@
 			<h2 id="head"></h2>
 			<div id="demo"></div>
 		</div>
- 
 	</div>
 </body>
 
@@ -20,12 +19,12 @@
 
 //Sending Data
 
-var myObj = { "name":"testName", "age":28, "city":"testCity" };
-var myJSON = JSON.stringify(myObj);
-document.getElementById("head").innerHTML = "Sending Data";
-document.getElementById("demo").innerHTML = myJSON;
-console.log("myObj: "+typeof(myObj));
-console.log("myJSON: "+typeof(myJSON));
+// var myObj = { "name":"testName", "age":28, "city":"testCity" };
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Sending Data";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
 
 
 //Receiving Data
@@ -36,6 +35,254 @@ console.log("myJSON: "+typeof(myJSON));
 // document.getElementById("demo").innerHTML = myObj.name+"<br>"+myObj.age+"<br>"+myObj.city;
 // console.log("myJSON: "+typeof(myJSON));
 // console.log("myObj: "+typeof(myObj));
+
+
+//Storing data
+
+// myObj = { "name":"testName", "age":28, "city":"testCity" };
+// myJSON = JSON.stringify(myObj);
+// localStorage.setItem("testJSON", myJSON);
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Retrieving data
+
+// text = localStorage.getItem("testJSON");
+// obj = JSON.parse(text);
+// document.getElementById("head").innerHTML = "Retrieving data";
+// document.getElementById("demo").innerHTML = obj.name+"<br>"+obj.age+"<br>"+obj.city; 
+// console.log("text: "+typeof(text));
+// console.log("obj: "+typeof(obj));
+
+
+//Accessing Object Values
+
+// myObj = { "name":"testName", "age":28, "car":null };
+// x = myObj.name; 
+// //(OR)
+// x = myObj["name"];
+// //Looping an Object
+// myObj = { "name":"testName", "age":28, "car":null };
+// document.getElementById("head").innerHTML = "Accessing Object Values";
+// for (x in myObj) {
+//     document.getElementById("demo").innerHTML += x+" — "+myObj[x]+"<br /><br/ >";
+// }
+
+
+//Nested JSON Objects
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "vehicle": {
+//         "vehicle1":"Car",
+//         "vehicle2":"Bike"
+//    }
+//  }
+// document.getElementById("head").innerHTML = "Nested JSON Objects";
+// x = myObj.vehicle.vehicle2;
+
+// //(OR)
+
+// //x = myObj.vehicle["vehicle2"];
+// document.getElementById("demo").innerHTML = x;
+
+
+//Accessing Array Values
+
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+//  x = myObj.vehicle[0];
+// document.getElementById("head").innerHTML = "Accessing Array Values";
+// document.getElementById("demo").innerHTML = x;
+
+
+//Looping Through an Array
+
+// myObj = { "name":"testName",
+//     "age":30,
+//     "vehicle": [ "Car", "Bike" ]
+// }
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i in myObj.vehicle) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
+
+// //(OR)
+
+// document.getElementById("head").innerHTML = "Looping Through an Array";
+// for (i = 0; i < myObj.vehicle.length; i++) {
+//     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
+// }
+
+
+//Nested Arrays in JSON Objects
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+//  document.getElementById("head").innerHTML = "Nested Arrays in JSON Objects";
+// for (i in myObj.cars) {
+//     document.getElementById("demo").innerHTML += "<h4>" + myObj.cars[i].name + "</h4>";
+//     for (j in myObj.cars[i].models) {
+//         document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].models[j]+"</li>";
+//     }
+// }
+
+
+//Modify Array Values
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+// myObj.cars[1]["name"] = "Mercedes";
+// myObj.cars[1]["models"] = ["Benz SLS AMG","Benz CLA-Class"];
+// console.log(myObj);
+// document.getElementById("head").innerHTML = "Nested Arrays in JSON Objects";
+// document.getElementById("demo").innerHTML = JSON.stringify(myObj);
+
+
+//Delete Array Items
+
+// myObj = {
+//     "name":"testName",
+//     "age":30,
+//     "cars": [
+//         { "name":"Ford", "models":[ "Fiesta", "Focus", "Mustang" ] },
+//         { "name":"BMW", "models":[ "320", "X3", "X5" ] },
+//         { "name":"Fiat", "models":[ "500", "Panda" ] }
+//     ]
+//  }
+// delete myObj.cars[1];
+// console.log(myObj);
+// document.getElementById("head").innerHTML = "Delete Array Items";
+// document.getElementById("demo").innerHTML = JSON.stringify(myObj);
+
+
+//Parsing JSON
+ 
+// var myObj = JSON.parse('{ "name":"testName", "age":28, "city":"testCity"}');
+// document.getElementById("head").innerHTML = "Parsing JSON";
+// document.getElementById("demo").innerHTML = myObj.name + ", " + myObj.age;
+
+
+//JSON From the Server
+ 
+// var xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "JSON From the Server";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myObj = JSON.parse(this.responseText);
+//         document.getElementById("demo").innerHTML = "<span>Name: </span>"+myObj.name+"<br/ ><br /><span>Age: </span>"+myObj.age+"<br /><br /><span>Cars: </span>";
+//         for (i in myObj.cars) {
+//     		document.getElementById("demo").innerHTML += "<h4>"+myObj.cars[i].name+"</h4>";   	
+//         	document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].model+"</li>";
+// 		}
+//     }
+// };
+// xmlhttp.open("GET", "json/json_demo.json", true);
+// xmlhttp.send();
+
+
+//Array as JSON
+
+// var xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "Array as JSON";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myArr = JSON.parse(this.responseText);
+//         document.getElementById("demo").innerHTML = myArr[0]+"<br /><br />"+myArr[1];
+//     }
+// };
+// xmlhttp.open("GET", "json/json_demo_array.json", true);
+// xmlhttp.send();
+
+
+//Stringify a JavaScript Object
+
+// var myObj = { "name":"testName", "age":30, "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify a JavaScript Object";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify a JavaScript Array
+
+// var myArr = [ "Car", "Bike"];
+// var myJSON = JSON.stringify(myArr);
+// document.getElementById("head").innerHTML = "Stringify a JavaScript Array";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myArr: "+typeof(myArr));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify Dates
+
+// var myObj = { "name":"testName", "today":new Date(), "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Dates";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//Stringify Functions
+
+// var myObj = { "name":"testName", "age":function () {return 30;}, "city":"testCity"};
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Functions";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+// var myObj = { "name":"testName", "age":function () {return 30;}, "city":"testCity"};
+// myObj.age = myObj.age.toString();
+// var myJSON = JSON.stringify(myObj);
+// document.getElementById("head").innerHTML = "Stringify Functions";
+// document.getElementById("demo").innerHTML = myJSON;
+// console.log("myObj: "+typeof(myObj));
+// console.log("myJSON: "+typeof(myJSON));
+
+
+//JSON HTML
+
+// var txt, x;
+// xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "JSON HTML ";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myObj = JSON.parse(this.responseText);
+//         txt = "<table>";
+//         txt += "<tr><th>Color Name</th><th>Hex Color Code</th><th>RGB Color Code</th></tr>";
+//         for (x in myObj) {
+//             myObj[x].forEach(function(elem, index) {
+//             	txt += "<tr><td style='color:"+elem.hexValue+"' class='colorName'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
+//     		});
+//         }
+//         txt += "</table>"        
+//         document.getElementById("demo").innerHTML = txt;
+//     }
+// };
+// xmlhttp.open("GET", "json/json-html.json", true);
+// xmlhttp.send();
+
 
 </script>
 

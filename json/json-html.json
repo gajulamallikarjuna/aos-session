@@ -1,0 +1,44 @@
+{
+    "colorsArray":[{
+            "colorName":"red",
+            "hexValue":"#f00",
+            "rgbValue":"rgb(255, 0, 0)"
+        },
+        {
+            "colorName":"green",
+            "hexValue":"#0f0",
+            "rgbValue":"rgb(0, 255, 0)"
+        },
+        {
+            "colorName":"blue",
+            "hexValue":"#00f",
+            "rgbValue":"rgb(0, 0, 255)"
+        },
+        {
+            "colorName":"cyan",
+            "hexValue":"#0ff",
+            "rgbValue":"rgb(0, 255, 255)"
+        },
+        {
+            "colorName":"magenta",
+            "hexValue":"#f0f",
+            "rgbValue":"rgb(255, 0, 255)"
+        },
+        {
+            "colorName":"yellow",
+            "rgbValue":"rgb(255, 255, 0)",
+            "hexValue":"#ff0"
+           
+        },
+        {
+            "colorName":"black",          
+            "hexValue":"#000",
+            "rgbValue":"rgb(0, 0, 0)"
+        },
+        {
+            "colorName":"orange",           
+            "hexValue":"#fa0",
+            "rgbValue":"rgb(255,165,0)"
+        }
+    ]
+}
