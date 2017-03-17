@@ -86,71 +86,71 @@
 
 //JSON Restructure
 
-var response = [{
-        "RegionName": "AMR",
-        "SalesOrgCode": "1001",
-        "SalesOrgDesc": "US",
-        "Date": "2016-06-1"
-    }, {
-        "RegionName": "AMR",
-        "SalesOrgCode": "1002",
-        "SalesOrgDesc": "Canada",
-        "Date": "2016-06-2"
-    }, {
-        "RegionName": "Europe",
-        "SalesOrgCode": "2001    ",
-        "SalesOrgDesc": "Netherlands",
-        "Date": "2016-06-01"
-    }, {
-        "RegionName": "Europe",
-        "SalesOrgCode": "2002    ",
-        "SalesOrgDesc": "UK",
-        "Date": "2016-06-02"
-    }, {
-        "RegionName": "APAC",
-        "SalesOrgCode": "4001",
-        "SalesOrgDesc": "New Zealand",
-        "Date": "2016-06-01"
-    }, {
-        "RegionName": "APAC",
-        "SalesOrgCode": "4002",
-        "SalesOrgDesc": "Singapore",
-        "Date": "2016-06-02"
-    }];
+// var response = [{
+//         "RegionName": "AMR",
+//         "SalesOrgCode": "1001",
+//         "SalesOrgDesc": "US",
+//         "Date": "2016-06-1"
+//     }, {
+//         "RegionName": "AMR",
+//         "SalesOrgCode": "1002",
+//         "SalesOrgDesc": "Canada",
+//         "Date": "2016-06-2"
+//     }, {
+//         "RegionName": "Europe",
+//         "SalesOrgCode": "2001    ",
+//         "SalesOrgDesc": "Netherlands",
+//         "Date": "2016-06-01"
+//     }, {
+//         "RegionName": "Europe",
+//         "SalesOrgCode": "2002    ",
+//         "SalesOrgDesc": "UK",
+//         "Date": "2016-06-02"
+//     }, {
+//         "RegionName": "APAC",
+//         "SalesOrgCode": "4001",
+//         "SalesOrgDesc": "New Zealand",
+//         "Date": "2016-06-01"
+//     }, {
+//         "RegionName": "APAC",
+//         "SalesOrgCode": "4002",
+//         "SalesOrgDesc": "Singapore",
+//         "Date": "2016-06-02"
+//     }];
 
-document.getElementById("get-demo-data").style = "display: none";
-document.getElementById("head").innerHTML = "JSON Restructure";
-document.getElementById("demo").innerHTML = JSON.stringify(response);
-console.log(response);
+// document.getElementById("get-demo-data").style = "display: none";
+// document.getElementById("head").innerHTML = "JSON Restructure";
+// document.getElementById("demo").innerHTML = JSON.stringify(response);
+// console.log(response);
 
-var groups = {};
-for(var g = 0; g < response.length; g++) {
-    var item = response[g];
-  if(item.RegionName != null) {
-        if(!groups[item.RegionName]) {
-            groups[item.RegionName] = [];
-        }
-        groups[item.RegionName].push({
-            day: item.Date,
-            orgcode: item.SalesOrgCode,
-            orgdesc: item.SalesOrgDesc,
-            sap: item.SAPCount,
-            rover: item.ROVERCount
-        });
-  }
-}
+// var groups = {};
+// for(var g = 0; g < response.length; g++) {
+//     var item = response[g];
+//   if(item.RegionName != null) {
+//         if(!groups[item.RegionName]) {
+//             groups[item.RegionName] = [];
+//         }
+//         groups[item.RegionName].push({
+//             day: item.Date,
+//             orgcode: item.SalesOrgCode,
+//             orgdesc: item.SalesOrgDesc,
+//             sap: item.SAPCount,
+//             rover: item.ROVERCount
+//         });
+//   }
+// }
 
-var datas = [];
-for(var gs in groups) {
-    if(Object.prototype.hasOwnProperty.call(groups, gs)) {
-        var objGroup = {};
-        objGroup[gs] = groups[gs];
-        datas.push(objGroup);
-    }
-}
+// var datas = [];
+// for(var gs in groups) {
+//     if(Object.prototype.hasOwnProperty.call(groups, gs)) {
+//         var objGroup = {};
+//         objGroup[gs] = groups[gs];
+//         datas.push(objGroup);
+//     }
+// }
 
-document.getElementById("demo").innerHTML += "<br /><br />"+JSON.stringify(datas);
-console.log(datas);
+// document.getElementById("demo").innerHTML += "<br /><br />"+JSON.stringify(datas);
+// console.log(datas);
 
 
 </script>

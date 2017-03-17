@@ -191,7 +191,7 @@
 // 		}
 //     }
 // };
-// xmlhttp.open("GET", "json/json_demo.txt", true);
+// xmlhttp.open("GET", "json/json_demo.json", true);
 // xmlhttp.send();
 
 
@@ -205,7 +205,7 @@
 //         document.getElementById("demo").innerHTML = myArr[0]+"<br>"+myArr[1];
 //     }
 // };
-// xmlhttp.open("GET", "json/json_demo_array.txt", true);
+// xmlhttp.open("GET", "json/json_demo_array.json", true);
 // xmlhttp.send();
 
 
@@ -259,25 +259,25 @@
 
 //JSON HTML
 
-var txt, x;
-xmlhttp = new XMLHttpRequest();
-document.getElementById("head").innerHTML = "JSON HTML ";
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myObj = JSON.parse(this.responseText);
-        txt = "<table>";
-        txt += "<tr><th>Color Name</th><th>Hex Color Code</th><th>RGB Color Code</th></tr>";
-        for (x in myObj) {
-            myObj[x].forEach(function(elem, index) {
-            	txt += "<tr><td style='color:"+elem.hexValue+"' class='colorName'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
-    		});
-        }
-        txt += "</table>"        
-        document.getElementById("demo").innerHTML = txt;
-    }
-};
-xmlhttp.open("GET", "json/json-html.txt", true);
-xmlhttp.send();
+// var txt, x;
+// xmlhttp = new XMLHttpRequest();
+// document.getElementById("head").innerHTML = "JSON HTML ";
+// xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//         myObj = JSON.parse(this.responseText);
+//         txt = "<table>";
+//         txt += "<tr><th>Color Name</th><th>Hex Color Code</th><th>RGB Color Code</th></tr>";
+//         for (x in myObj) {
+//             myObj[x].forEach(function(elem, index) {
+//             	txt += "<tr><td style='color:"+elem.hexValue+"' class='colorName'>" + elem.colorName + "</td><td>" + elem.rgbValue + "</td><td>" + elem.hexValue + "</td></tr>";
+//     		});
+//         }
+//         txt += "</table>"        
+//         document.getElementById("demo").innerHTML = txt;
+//     }
+// };
+// xmlhttp.open("GET", "json/json-html.json", true);
+// xmlhttp.send();
 
 
 </script>
