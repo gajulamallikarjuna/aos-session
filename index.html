@@ -66,7 +66,7 @@
 // myObj = { "name":"testName", "age":28, "car":null };
 // document.getElementById("head").innerHTML = "Accessing Object Values";
 // for (x in myObj) {
-//     document.getElementById("demo").innerHTML += x+" — "+myObj[x]+"<br>";
+//     document.getElementById("demo").innerHTML += x+" — "+myObj[x]+"<br /><br/ >";
 // }
 
 
@@ -82,7 +82,9 @@
 //  }
 // document.getElementById("head").innerHTML = "Nested JSON Objects";
 // x = myObj.vehicle.vehicle2;
+
 // //(OR)
+
 // //x = myObj.vehicle["vehicle2"];
 // document.getElementById("demo").innerHTML = x;
 
@@ -108,7 +110,9 @@
 // for (i in myObj.vehicle) {
 //     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
 // }
-//(OR)
+
+// //(OR)
+
 // document.getElementById("head").innerHTML = "Looping Through an Array";
 // for (i = 0; i < myObj.vehicle.length; i++) {
 //     document.getElementById("demo").innerHTML  += myObj.vehicle[i]+"<br>";
@@ -128,7 +132,7 @@
 //  }
 //  document.getElementById("head").innerHTML = "Nested Arrays in JSON Objects";
 // for (i in myObj.cars) {
-//     document.getElementById("demo").innerHTML += "<h1>" + myObj.cars[i].name + "</h1>";
+//     document.getElementById("demo").innerHTML += "<h4>" + myObj.cars[i].name + "</h4>";
 //     for (j in myObj.cars[i].models) {
 //         document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].models[j]+"</li>";
 //     }
@@ -184,9 +188,9 @@
 // xmlhttp.onreadystatechange = function() {
 //     if (this.readyState == 4 && this.status == 200) {
 //         myObj = JSON.parse(this.responseText);
-//         document.getElementById("demo").innerHTML = myObj.name+"<br>"+myObj.age+"<br>";
+//         document.getElementById("demo").innerHTML = "<span>Name: </span>"+myObj.name+"<br/ ><br /><span>Age: </span>"+myObj.age+"<br /><br /><span>Cars: </span>";
 //         for (i in myObj.cars) {
-//     		document.getElementById("demo").innerHTML += myObj.cars[i].name;   	
+//     		document.getElementById("demo").innerHTML += "<h4>"+myObj.cars[i].name+"</h4>";   	
 //         	document.getElementById("demo").innerHTML += "<li>"+myObj.cars[i].model+"</li>";
 // 		}
 //     }
@@ -202,7 +206,7 @@
 // xmlhttp.onreadystatechange = function() {
 //     if (this.readyState == 4 && this.status == 200) {
 //         myArr = JSON.parse(this.responseText);
-//         document.getElementById("demo").innerHTML = myArr[0]+"<br>"+myArr[1];
+//         document.getElementById("demo").innerHTML = myArr[0]+"<br /><br />"+myArr[1];
 //     }
 // };
 // xmlhttp.open("GET", "json/json_demo_array.json", true);

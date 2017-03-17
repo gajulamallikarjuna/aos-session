@@ -18,9 +18,21 @@ body{
     box-shadow: 0px 1px 1px #999;
 }
 
+#demo {
+    font-size: 16px;
+    margin: 0;
+    padding: 10px 0;
+}
+
 li {
     margin: 0;
     padding: 5px 15px;
+}
+
+#demo span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0088CC;
 }
 
 table {
